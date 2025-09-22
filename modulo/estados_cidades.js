@@ -8,7 +8,7 @@
 //Simulando o resultado de uma API 
 var listaDeEstados = { 
     pais: 'Brasil',
-    estados: 
+   estados: 
     [
         {
             sigla : 'SP',
