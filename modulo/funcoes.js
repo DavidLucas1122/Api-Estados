@@ -7,7 +7,7 @@
 
 //Import do arquivo estados e cidades
 const dados = require('./estados_cidades.js')
-const MESSAGE_ERROR = {status: false, statuscode: 500, development: 'David Lucas dos Santoss'}
+const MESSAGE_ERROR = {status: false, statuscode: 500, development: 'David Lucas dos Santos'}
 
 
 //Retorne a lista de estados
@@ -154,12 +154,13 @@ const getCidadesBySigla = function (sigla){
         return MESSAGE_ERROR
     }
 }
-console.log(getCidadesBySigla("SP"))
+// console.log(getCidadesBySigla("SP"))
 
 module.exports = {
     getAllEstados,
     getEstadosBySigla,
     getCapitalBySigla,
     getEstadosByRegiao,
-    getEstadoIsCapitalByCountry
+    getEstadoIsCapitalByCountry,
+    getCidadesBySigla
 }

@@ -46,21 +46,49 @@ app.get('/v1/estados', function(request, response){
     response.json(estados)
 })
 
+//getEstadosBySigla
 app.get('/v1/estado/:uf', function(request, response){
     let sigla = request.params.uf
+    let estado = dados.getEstadosBySigla(sigla)
 
-    console.log(sigla)
+    response.status(estado.statuscode)
+    response.json(estado)
 })
 
-app.get('/v1/regiao/estado/:id', function(request, response){
+//getCapitalBySigla
+app.get('/v1/capital/estado/:uf', function(request, response){
+    let sigla = request.params.uf
+    let capital = dados.getCapitalBySigla(sigla)
+
+    response.status(capital.statuscode)
+    response.json(capital)
+})
+
+//getEstadosByRegiao
+app.get('/v1/regiao/estado/', function(request, response){
     let regiaoEstados = request.query.regiao
-    let sigla         = request.query.uf
-    let id            = request.params.id
+    let estados = dados.getEstadosByRegiao
 
-    console.log(regiaoEstados)
-    console.log(sigla)
-    console.log(id)
+    response.status(estados.statuscode)
+    response.json(estados)
+})
 
+//getEstadoIsCapitalByCountry
+app.get('/v1/pais/estado/', function(request, response){
+    let pais = request.query.pais
+    let isCapital = dados.getEstadoIsCapitalByCountry(pais)
+
+    response.status(isCapital.statuscode)
+    response.json(isCapital)
+})
+
+//getCidadesBySigla
+app.get('/v1/cidades/estados/', function(request, response){
+    let estado = request.query.estado
+    let cidades = dados.getCidadesBySigla(estado)
+
+    response.status(cidades.statuscode)
+    response.json(capital)
 })
 
 //start da API
