@@ -139,7 +139,7 @@ const getCidadesBySigla = function (sigla){
     let message = {status: true, statuscode: 200, development: 'David Lucas dos Santos', uf: '', descricao: '', quantidade_cidades: '', cidades: []}
 
     const cidades = dados.listaDeEstados.estados.find(function(item){
-        return item.sigla === sigla.toUpperCase()
+        return item.sigla === sigla
     })
 
     if(cidades){
